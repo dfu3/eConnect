@@ -10,7 +10,7 @@ import UIKit;
 
 struct task
 {
-    var name = "no name";
+    var name = "";
 }
 
 var taskMgr: TaskManager = TaskManager();
@@ -19,7 +19,7 @@ class TaskManager: NSObject
 {
     var tasks = [task]();
     
-    func addTask(name: String)
+    func addTask(name: String) // taskMgr.addTask(stringValue) to add name to listView
     {
         tasks.append(task(name: name));
     }

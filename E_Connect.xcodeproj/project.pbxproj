@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0CB95C1B31BE4E00F86255 /* BarCodeHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CB95B1B31BE4E00F86255 /* BarCodeHouse.swift */; };
 		0C8CDDA41B2F469700BA041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8CDDA31B2F469700BA041A /* AppDelegate.swift */; };
 		0C8CDDA61B2F469700BA041A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8CDDA51B2F469700BA041A /* FirstViewController.swift */; };
 		0C8CDDA81B2F469700BA041A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8CDDA71B2F469700BA041A /* SecondViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0CB95B1B31BE4E00F86255 /* BarCodeHouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCodeHouse.swift; sourceTree = "<group>"; };
 		0C8CDD9E1B2F469700BA041A /* E_Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = E_Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8CDDA21B2F469700BA041A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C8CDDA31B2F469700BA041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				0C8CDDA51B2F469700BA041A /* FirstViewController.swift */,
 				0C8CDDA71B2F469700BA041A /* SecondViewController.swift */,
 				0C8CDDA91B2F469700BA041A /* Main.storyboard */,
+				0C0CB95B1B31BE4E00F86255 /* BarCodeHouse.swift */,
 				0C8CDDC51B2F619700BA041A /* TableManager.swift */,
 				0C8CDDAC1B2F469700BA041A /* Images.xcassets */,
 				0C8CDDAE1B2F469700BA041A /* LaunchScreen.xib */,
@@ -237,6 +240,7 @@
 				0C8CDDC61B2F619700BA041A /* TableManager.swift in Sources */,
 				0C8CDDA81B2F469700BA041A /* SecondViewController.swift in Sources */,
 				0C8CDDA41B2F469700BA041A /* AppDelegate.swift in Sources */,
+				0C0CB95C1B31BE4E00F86255 /* BarCodeHouse.swift in Sources */,
 				0C8CDDA61B2F469700BA041A /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

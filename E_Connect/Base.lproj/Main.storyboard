@@ -277,6 +277,7 @@
                     <connections>
                         <outlet property="barCodeView" destination="iTv-P7-jrW" id="cWv-uH-j2x"/>
                         <outlet property="name" destination="M3p-e1-9D2" id="2rS-xA-5Wm"/>
+                        <outlet property="nameDisplay" destination="7oj-kl-bC5" id="cWj-dj-Cm4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

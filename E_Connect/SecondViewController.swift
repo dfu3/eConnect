@@ -13,48 +13,85 @@ class SecondViewController: UIViewController, UITextFieldDelegate
 {
     
     
+    @IBOutlet weak var nameDisplay: UILabel!;
+    
     @IBOutlet weak var name: UITextField!;
     
     @IBOutlet weak var barCodeView: UIImageView!;
-    weak var barCodeIMG: UIImage!;
     
     @IBAction func goToScan(sender: UIButton) // opens up camera view to scan another barcode
     {
-        //code
-        print("scanning \n");
+        // load scanner
         
     }
     
     
     @IBAction func getName(sender: UIButton) // will send the name to the server to be queued
     {
-        print("name: " + name.text + "\n");
-        //taskMgr.addTask(name.text);
-        self.view.endEditing(true);
+        
+        var GUID = "9999";
+        let allowedChars: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
+        var badChar = false;
+        
+        if( barCodeHouse.curVal == "0000") // if first time entering name
+        {
+            for letter in name.text
+            {
+                if ( allowedChars.rangeOfString(String(letter)) == nil ) // check for valid name
+                {
+                    badChar = true;
+                    break;
+                }
+                
+            }
+            
+            if(badChar) // alert mess
+            {
+                var alert = UIAlertController(title: "Invalid Name Iput", message: "A,a - Z,z Only", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+            else
+            {
+                //taskMgr.addTask(name.text);
+                self.view.endEditing(true);
+                
+                let barCode = BarCodeGen.fromString(GUID);
+                
+                barCodeHouse.addCode(barCode!, GUID: GUID);
+                barCodeView.image = barCode;
+                
+                barCodeView.layer.cornerRadius = 12;
+                barCodeView.layer.masksToBounds = true;
+                
+                name.placeholder = "Account Active";
+                nameDisplay.text = name.text;
+            }
+            
+        }
+        
+        else // alert mess
+        {
+            var alert = UIAlertController(title: "Account Active", message: "You Have Already Entered A Name", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+        
         name.text = "";
-        
-        let barCode = fromString("9999");
-        
-        barCodeView.image = barCode;
-        barCodeIMG = barCode;
-        barCodeView.layer.cornerRadius = 12;
-        barCodeView.layer.masksToBounds = true;
     }
-    
-    func fromString(string : String) -> UIImage? // returns barcode image
-    {
-        
-        let data = string.dataUsingEncoding(NSASCIIStringEncoding);
-        let filter = CIFilter(name: "CICode128BarcodeGenerator");
-        filter.setValue(data, forKey: "inputMessage");
-        return UIImage(CIImage: filter.outputImage);
-        
-    }
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad();
-        barCodeView.image = barCodeIMG;
+        let localImage = barCodeHouse.barCode
+        barCodeView.image = barCodeHouse.barCode;
+        
+        barCodeView.layer.cornerRadius = 12;
+        barCodeView.layer.masksToBounds = true;
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>015408AE-A89E-44EC-8A04-2F3F87ED986A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0258513BA3811E21F112D58E791C20B1D6E38C45</key>
+		<string>https://github.com/dfu3/eConnect.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>E_Connect.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0258513BA3811E21F112D58E791C20B1D6E38C45</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dfu3/eConnect.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0258513BA3811E21F112D58E791C20B1D6E38C45</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0258513BA3811E21F112D58E791C20B1D6E38C45</string>
+			<key>IDESourceControlWCCName</key>
+			<string>E_Connect</string>
+		</dict>
+	</array>
+</dict>
+</plist>
