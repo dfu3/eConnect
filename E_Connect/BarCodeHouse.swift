@@ -17,8 +17,8 @@ class BarCodeGen
         
         let data = string.dataUsingEncoding(NSASCIIStringEncoding);
         let filter = CIFilter(name: "CICode128BarcodeGenerator");
-        filter.setValue(data, forKey: "inputMessage");
-        return UIImage(CIImage: filter.outputImage);
+        filter!.setValue(data, forKey: "inputMessage");
+        return UIImage(CIImage: filter!.outputImage);
         
     }
     

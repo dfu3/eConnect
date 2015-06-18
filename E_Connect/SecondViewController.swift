@@ -35,7 +35,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate
         
         if( barCodeHouse.curVal == "0000") // if first time entering name
         {
-            for letter in name.text
+            for letter in name.text!.characters
             {
                 if ( allowedChars.rangeOfString(String(letter)) == nil ) // check for valid name
                 {
@@ -101,7 +101,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
         self.view.endEditing(true);
     }
