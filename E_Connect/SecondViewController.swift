@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 Merck. All rights reserved.
 //
 
-import UIKit;
-import CoreImage;
+import UIKit
+import CoreImage
+import Foundation
+import RSBarcodes
+import AVFoundation
 
 class SecondViewController: UIViewController, UITextFieldDelegate
 {
@@ -29,11 +32,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate
     @IBAction func getName(sender: UIButton) // will send the name to the server to be queued
     {
         
-        var GUID = "9999";
         let allowedChars: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
         var badChar = false;
         
-        if( barCodeHouse.curVal == "0000") // if first time entering name
+        if(true) // if first time entering name
         {
             for letter in name.text!.characters
             {
@@ -54,16 +56,17 @@ class SecondViewController: UIViewController, UITextFieldDelegate
             }
             else
             {
-                //taskMgr.addTask(name.text);
+                
                 self.view.endEditing(true);
                 
-                let barCode = BarCodeGen.fromString(GUID);
+                //let barCode = BarCodeGen.fromString(GUID);
+                let barcode_image = RSUnifiedCodeGenerator.shared.generateCode("econnect://9999", machineReadableCodeObjectType: AVMetadataObjectTypeCode39Code)
                 
-                barCodeHouse.addCode(barCode!, GUID: GUID);
-                barCodeView.image = barCode;
+                barCodeView.image = barcode_image;
+                barCodeView.sizeToFit()
                 
-                barCodeView.layer.cornerRadius = 12;
-                barCodeView.layer.masksToBounds = true;
+                //barCodeView.layer.cornerRadius = 12;
+                //barCodeView.layer.masksToBounds = true;
                 
                 name.placeholder = "Account Active";
                 nameDisplay.text = name.text;
@@ -85,21 +88,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad();
-        let localImage = barCodeHouse.barCode
-        barCodeView.image = barCodeHouse.barCode;
         
-        barCodeView.layer.cornerRadius = 12;
-        barCodeView.layer.masksToBounds = true;
-        
-        let interface = DatabaseInterface()
-        var returnedID: Int?
-        let callbackFunction = {(localId: Int) -> Void in
-            returnedID = localId
-        }
-        
-        interface.getLeaderBoard({(response: Array<(Int,String,Int)>) -> () in
-            
-        })
+        barCodeView.image = RSUnifiedCodeGenerator.shared.generateCode("econnect://9999", machineReadableCodeObjectType: AVMetadataObjectTypeCode39Code)
         
         
         // Do any additional setup after loading the view, typically from a nib.
