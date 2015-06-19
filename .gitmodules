@@ -1,0 +1,9 @@
+[submodule "Alamofire"]
+	path = Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "RSBarcodes_Swift"]
+	path = RSBarcodes_Swift
+	url = https://github.com/yeahdongcn/RSBarcodes_Swift.git
+[submodule "SwiftyJSON"]
+	path = SwiftyJSON
+	url = https://github.com/SwiftyJSON/SwiftyJSON.git

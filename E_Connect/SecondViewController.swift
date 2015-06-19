@@ -35,7 +35,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate
         
         if( barCodeHouse.curVal == "0000") // if first time entering name
         {
-            for letter in name.text
+            for letter in name.text!.characters
             {
                 if ( allowedChars.rangeOfString(String(letter)) == nil ) // check for valid name
                 {
@@ -91,6 +91,16 @@ class SecondViewController: UIViewController, UITextFieldDelegate
         barCodeView.layer.cornerRadius = 12;
         barCodeView.layer.masksToBounds = true;
         
+        let interface = DatabaseInterface()
+        var returnedID: Int?
+        let callbackFunction = {(localId: Int) -> Void in
+            returnedID = localId
+        }
+        
+        interface.getLeaderBoard({(response: Array<(Int,String,Int)>) -> () in
+            
+        })
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -101,7 +111,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent?)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
         self.view.endEditing(true);
     }
