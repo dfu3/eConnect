@@ -11,45 +11,46 @@ import Alamofire
 
 class DatabaseInterface{
     let host_name = "http://econnect-backend.herokuapp.com/"
+    //let host_name = "http://127.0.0.1:5000/"
     
-    func registerNewUser(name: String, callback: (Int) -> ()){
+    func registerNewUser(name: String, callback: (Int,Bool) -> ()){
         //replace spaces wiht +
         Alamofire.request(.POST, URLString: host_name+"users/", parameters: ["username":name])
             .responseString(){ (request, response, data, error) in
-                print(request)
-                print(response)
-                print(data)
-                print(error)
                 if(response?.statusCode != 200 || data == nil){
-                    callback(-1)
+                    callback(-1, false)
                 } else {
-                    callback(Int(data!)!)
+                    callback(Int(data!)!,true)
                 }
         }
     }
     
     func getUserCount(userID: Int, callback: (Int) -> ()){
-        //validate string
-        Alamofire.request(.POST, URLString: host_name+"users/"+String(userID))
+        Alamofire.request(.GET, URLString: host_name+"users/"+String(userID))
             .responseString(){ (request, response, data, error) in
-                print(request)
-                print(response)
-                print(data)
-                print(error)
                 if(response?.statusCode != 200 || data == nil){
                     callback(-1)
                 } else {
-                    callback(Int(data!)!)
+                    if let s = data{
+                        if let i = Int(s){
+                            callback(i)
+                        } else {
+                            callback(-1)
+                        }
+                    } else{
+                        callback(-1)
+                    }
+                    
                 }
         }
        
     }
     
-    func getLeaderBoard(callback: Array<(Int, String, Int)> -> ()){
+    func getLeaderBoard(callback: (Bool, Array<(Int, String, Int)>) -> ()){
         Alamofire.request(.GET, URLString: host_name+"users/")
             .responseJSON { (request,response,data,error) in
                 if(response?.statusCode != 200 || data == nil){
-                    //callback(nil)
+                    callback(false,[(Int, String,Int)]())
                 } else {
                     let format_data = (data as! NSArray) as Array
                     var nested_array: Array<(Int, String, Int)> = [(Int, String, Int)]()
@@ -58,19 +59,22 @@ class DatabaseInterface{
                         let temp = (item as! NSArray) as Array
                         nested_array.append((temp[0] as! Int, temp [1] as! String, temp[2] as! Int))
                     }
-                    callback(nested_array)
+                    callback(true,nested_array)
                 }
         }
     }
     
-    func newTransaction(self_id: Int, other_id: Int, callback: (Bool) -> ()){
+    func newTransaction(self_id: Int, other_id: Int, callback: (Int, Bool) -> ()){
         Alamofire.request(.POST, URLString: host_name+"transaction/", parameters: ["user_id_1": self_id,"user_id_2":other_id])
             .responseString(){ (request, response, data, error) in
-                print(data)
                 if(response?.statusCode != 200 || data == nil || data != "Transaction Successful"){
-                    callback(false)
+                    if response == nil {
+                        callback(-1,false)
+                    } else{
+                        callback((response?.statusCode)!,false)
+                    }
                 } else {
-                    callback(true)
+                    callback(200, true)
                 }
         }    }
     
