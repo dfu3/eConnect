@@ -97,7 +97,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
             gen.strokeColor = UIColor.blackColor()
             let image: UIImage? = gen.generateCode("econnect://-1", machineReadableCodeObjectType: AVMetadataObjectTypeQRCode)
             if let i = image {
-                self.codeImageView.image = RSAbstractCodeGenerator.resizeImage(i, scale: (self.view.frame.width - 32.0)/i.size.height)
+                self.codeImageView.image = RSAbstractCodeGenerator.resizeImage(i, scale: (self.view.frame.width - 100.0)/i.size.height)
             }
             let defaults = NSUserDefaults.standardUserDefaults()
             if let u = defaults.valueForKey(userInfo.username) as? String{
@@ -180,7 +180,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         gen.strokeColor = UIColor.blackColor()
         let image: UIImage? = gen.generateCode("econnect://\(safeUserID!)", machineReadableCodeObjectType: AVMetadataObjectTypeQRCode)
         if let i = image {
-            self.codeImageView.image = RSAbstractCodeGenerator.resizeImage(i, scale: (self.view.frame.width - 32.0)/i.size.height)
+            self.codeImageView.image = RSAbstractCodeGenerator.resizeImage(i, scale: (self.view.frame.width - 100.0)/i.size.height)
         }
         welcomeLabel.text = "Hi, \(safeUserName!)"
         nameTextField.hidden = true

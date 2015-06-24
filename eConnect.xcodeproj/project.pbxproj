@@ -12,9 +12,12 @@
 		0C8CDDAB1B2F469700BA041A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDA91B2F469700BA041A /* Main.storyboard */; };
 		0C8CDDAD1B2F469700BA041A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDAC1B2F469700BA041A /* Images.xcassets */; };
 		0C8CDDB01B2F469700BA041A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDAE1B2F469700BA041A /* LaunchScreen.xib */; };
-		0C8CDDBC1B2F469700BA041A /* E_ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8CDDBB1B2F469700BA041A /* E_ConnectTests.swift */; };
 		0C8CDDCA1B30B85300BA041A /* Merck-logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDC91B30B85300BA041A /* Merck-logo.gif */; };
 		0C8CDDCC1B30B85D00BA041A /* merckLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDCB1B30B85D00BA041A /* merckLogo.jpg */; };
+		583308501B37D27F00EF325A /* RSBarcodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DD633B1B34845A00AA22A0 /* RSBarcodes.framework */; };
+		583308511B37D27F00EF325A /* RSBarcodes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58DD633B1B34845A00AA22A0 /* RSBarcodes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		583308541B37D28300EF325A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BBE421B33976F001115CF /* Alamofire.framework */; };
+		583308551B37D28300EF325A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 582BBE421B33976F001115CF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		583C76921B371C1500C1F29F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C76911B371C1500C1F29F /* SecondViewController.swift */; };
 		583C76941B371F2500C1F29F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 583C76931B371F2500C1F29F /* Icon.png */; };
 		583C76951B373AAD00C1F29F /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582BBE4E1B3397EE001115CF /* DatabaseInterface.swift */; };
@@ -22,13 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0C8CDDB61B2F469700BA041A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C8CDD961B2F469700BA041A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C8CDD9D1B2F469700BA041A;
-			remoteInfo = E_Connect;
-		};
 		582BBE411B33976F001115CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 582BBE3A1B33976F001115CF /* Alamofire.xcodeproj */;
@@ -64,6 +60,20 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
+		583308521B37D27F00EF325A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58DD63361B34845A00AA22A0 /* RSBarcodes.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D08336361A202E81004EE128;
+			remoteInfo = RSBarcodes;
+		};
+		583308561B37D28300EF325A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 582BBE3A1B33976F001115CF /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		58DD633A1B34845A00AA22A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58DD63361B34845A00AA22A0 /* RSBarcodes.xcodeproj */;
@@ -87,6 +97,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				583308511B37D27F00EF325A /* RSBarcodes.framework in Embed Frameworks */,
+				583308551B37D28300EF325A /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,16 +106,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C8CDD9E1B2F469700BA041A /* E_Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = E_Connect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8CDD9E1B2F469700BA041A /* eConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8CDDA21B2F469700BA041A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C8CDDA31B2F469700BA041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C8CDDA51B2F469700BA041A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0C8CDDAA1B2F469700BA041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C8CDDAC1B2F469700BA041A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0C8CDDAF1B2F469700BA041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0C8CDDB51B2F469700BA041A /* E_ConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = E_ConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C8CDDBA1B2F469700BA041A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C8CDDBB1B2F469700BA041A /* E_ConnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_ConnectTests.swift; sourceTree = "<group>"; };
 		0C8CDDC91B30B85300BA041A /* Merck-logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Merck-logo.gif"; sourceTree = "<group>"; };
 		0C8CDDCB1B30B85D00BA041A /* merckLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = merckLogo.jpg; sourceTree = "<group>"; };
 		582BBE3A1B33976F001115CF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
@@ -119,13 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C8CDDB21B2F469700BA041A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				583308501B37D27F00EF325A /* RSBarcodes.framework in Frameworks */,
+				583308541B37D28300EF325A /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +142,6 @@
 				58DD63361B34845A00AA22A0 /* RSBarcodes.xcodeproj */,
 				582BBE3A1B33976F001115CF /* Alamofire.xcodeproj */,
 				0C8CDDA01B2F469700BA041A /* E_Connect */,
-				0C8CDDB81B2F469700BA041A /* E_ConnectTests */,
 				0C8CDD9F1B2F469700BA041A /* Products */,
 				0C8CDDCD1B30B88100BA041A /* images */,
 			);
@@ -147,8 +150,7 @@
 		0C8CDD9F1B2F469700BA041A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C8CDD9E1B2F469700BA041A /* E_Connect.app */,
-				0C8CDDB51B2F469700BA041A /* E_ConnectTests.xctest */,
+				0C8CDD9E1B2F469700BA041A /* eConnect.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,23 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				0C8CDDA21B2F469700BA041A /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0C8CDDB81B2F469700BA041A /* E_ConnectTests */ = {
-			isa = PBXGroup;
-			children = (
-				0C8CDDBB1B2F469700BA041A /* E_ConnectTests.swift */,
-				0C8CDDB91B2F469700BA041A /* Supporting Files */,
-			);
-			path = E_ConnectTests;
-			sourceTree = "<group>";
-		};
-		0C8CDDB91B2F469700BA041A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0C8CDDBA1B2F469700BA041A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,9 +211,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C8CDD9D1B2F469700BA041A /* E_Connect */ = {
+		0C8CDD9D1B2F469700BA041A /* eConnect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C8CDDBF1B2F469700BA041A /* Build configuration list for PBXNativeTarget "E_Connect" */;
+			buildConfigurationList = 0C8CDDBF1B2F469700BA041A /* Build configuration list for PBXNativeTarget "eConnect" */;
 			buildPhases = (
 				0C8CDD9A1B2F469700BA041A /* Sources */,
 				0C8CDD9B1B2F469700BA041A /* Frameworks */,
@@ -240,29 +225,13 @@
 			dependencies = (
 				582BBE4C1B339780001115CF /* PBXTargetDependency */,
 				58DD633F1B34847500AA22A0 /* PBXTargetDependency */,
+				583308531B37D27F00EF325A /* PBXTargetDependency */,
+				583308571B37D28300EF325A /* PBXTargetDependency */,
 			);
-			name = E_Connect;
+			name = eConnect;
 			productName = E_Connect;
-			productReference = 0C8CDD9E1B2F469700BA041A /* E_Connect.app */;
+			productReference = 0C8CDD9E1B2F469700BA041A /* eConnect.app */;
 			productType = "com.apple.product-type.application";
-		};
-		0C8CDDB41B2F469700BA041A /* E_ConnectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0C8CDDC21B2F469700BA041A /* Build configuration list for PBXNativeTarget "E_ConnectTests" */;
-			buildPhases = (
-				0C8CDDB11B2F469700BA041A /* Sources */,
-				0C8CDDB21B2F469700BA041A /* Frameworks */,
-				0C8CDDB31B2F469700BA041A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0C8CDDB71B2F469700BA041A /* PBXTargetDependency */,
-			);
-			name = E_ConnectTests;
-			productName = E_ConnectTests;
-			productReference = 0C8CDDB51B2F469700BA041A /* E_ConnectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -276,15 +245,11 @@
 				TargetAttributes = {
 					0C8CDD9D1B2F469700BA041A = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 9TH3HYURW7;
-					};
-					0C8CDDB41B2F469700BA041A = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 0C8CDD9D1B2F469700BA041A;
+						DevelopmentTeam = R63BQQC8AW;
 					};
 				};
 			};
-			buildConfigurationList = 0C8CDD991B2F469700BA041A /* Build configuration list for PBXProject "E_Connect" */;
+			buildConfigurationList = 0C8CDD991B2F469700BA041A /* Build configuration list for PBXProject "eConnect" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -307,8 +272,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				0C8CDD9D1B2F469700BA041A /* E_Connect */,
-				0C8CDDB41B2F469700BA041A /* E_ConnectTests */,
+				0C8CDD9D1B2F469700BA041A /* eConnect */,
 			);
 		};
 /* End PBXProject section */
@@ -365,13 +329,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C8CDDB31B2F469700BA041A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -387,26 +344,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C8CDDB11B2F469700BA041A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C8CDDBC1B2F469700BA041A /* E_ConnectTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C8CDDB71B2F469700BA041A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0C8CDD9D1B2F469700BA041A /* E_Connect */;
-			targetProxy = 0C8CDDB61B2F469700BA041A /* PBXContainerItemProxy */;
-		};
 		582BBE4C1B339780001115CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
 			targetProxy = 582BBE4B1B339780001115CF /* PBXContainerItemProxy */;
+		};
+		583308531B37D27F00EF325A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSBarcodes;
+			targetProxy = 583308521B37D27F00EF325A /* PBXContainerItemProxy */;
+		};
+		583308571B37D28300EF325A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 583308561B37D28300EF325A /* PBXContainerItemProxy */;
 		};
 		58DD633F1B34847500AA22A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -511,6 +465,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -525,8 +480,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = E_Connect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = eConnect;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -541,50 +497,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = E_Connect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = eConnect;
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		0C8CDDC31B2F469700BA041A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = E_ConnectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E_Connect.app/E_Connect";
-			};
-			name = Debug;
-		};
-		0C8CDDC41B2F469700BA041A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = E_ConnectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E_Connect.app/E_Connect";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C8CDD991B2F469700BA041A /* Build configuration list for PBXProject "E_Connect" */ = {
+		0C8CDD991B2F469700BA041A /* Build configuration list for PBXProject "eConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C8CDDBD1B2F469700BA041A /* Debug */,
@@ -593,20 +516,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C8CDDBF1B2F469700BA041A /* Build configuration list for PBXNativeTarget "E_Connect" */ = {
+		0C8CDDBF1B2F469700BA041A /* Build configuration list for PBXNativeTarget "eConnect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C8CDDC01B2F469700BA041A /* Debug */,
 				0C8CDDC11B2F469700BA041A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0C8CDDC21B2F469700BA041A /* Build configuration list for PBXNativeTarget "E_ConnectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0C8CDDC31B2F469700BA041A /* Debug */,
-				0C8CDDC41B2F469700BA041A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

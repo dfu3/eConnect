@@ -18,7 +18,7 @@
         <!--Merck eConnect-->
         <scene sceneID="XOT-bh-AH7">
             <objects>
-                <viewController id="yKx-Ta-0D1" customClass="SecondViewController" customModule="E_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yKx-Ta-0D1" customClass="SecondViewController" customModule="eConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3No-go-GRa"/>
                         <viewControllerLayoutGuide type="bottom" id="8qK-yu-5my"/>
@@ -36,7 +36,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAs-Oa-ccT">
-                                <rect key="frame" x="119" y="164" width="82" height="34"/>
+                                <rect key="frame" x="119" y="160" width="82" height="34"/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.41176470588235292" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="L1D-Oq-BSd"/>
@@ -55,14 +55,14 @@
                                     <action selector="enterButtonAction:" destination="yKx-Ta-0D1" eventType="touchUpInside" id="MIF-hH-Hvj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTv-P7-jrW">
-                                <rect key="frame" x="32" y="230" width="256" height="256"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTv-P7-jrW">
+                                <rect key="frame" x="28" y="246" width="264" height="264"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iTv-P7-jrW" secondAttribute="height" multiplier="1:1" id="f4U-aw-Dap"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT7-C7-eYp">
-                                <rect key="frame" x="40" y="518" width="240" height="34"/>
+                                <rect key="frame" x="40" y="522" width="240" height="34"/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.41176470588235292" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="NTD-Ky-D8b"/>
@@ -91,22 +91,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8qK-yu-5my" firstAttribute="top" secondItem="RT7-C7-eYp" secondAttribute="bottom" constant="16" id="5JY-fu-1Zd"/>
+                            <constraint firstItem="8qK-yu-5my" firstAttribute="top" secondItem="RT7-C7-eYp" secondAttribute="bottom" constant="12" id="5JY-fu-1Zd"/>
+                            <constraint firstItem="RT7-C7-eYp" firstAttribute="top" secondItem="iTv-P7-jrW" secondAttribute="bottom" constant="12" id="7oo-IF-OaS"/>
                             <constraint firstItem="nAs-Oa-ccT" firstAttribute="centerX" secondItem="BHu-el-yxv" secondAttribute="centerX" id="9te-cq-MN6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nyg-jw-103" secondAttribute="trailing" id="CXc-2X-OQB"/>
                             <constraint firstItem="M3p-e1-9D2" firstAttribute="centerX" secondItem="BHu-el-yxv" secondAttribute="centerX" id="E3I-xF-kok"/>
-                            <constraint firstItem="nAs-Oa-ccT" firstAttribute="top" secondItem="M3p-e1-9D2" secondAttribute="bottom" constant="16" id="Hzu-Yr-ALG"/>
-                            <constraint firstItem="nyg-jw-103" firstAttribute="centerX" secondItem="M3p-e1-9D2" secondAttribute="centerX" id="Jxv-UM-jUb"/>
-                            <constraint firstItem="M3p-e1-9D2" firstAttribute="top" secondItem="nyg-jw-103" secondAttribute="bottom" constant="12" id="LiX-E5-qUD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iTv-P7-jrW" secondAttribute="trailing" constant="16" id="Mfy-Kx-Gw9"/>
+                            <constraint firstItem="nAs-Oa-ccT" firstAttribute="top" secondItem="M3p-e1-9D2" secondAttribute="bottom" priority="750" constant="12" id="Hzu-Yr-ALG"/>
+                            <constraint firstItem="M3p-e1-9D2" firstAttribute="top" secondItem="nyg-jw-103" secondAttribute="bottom" priority="750" constant="12" id="LiX-E5-qUD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iTv-P7-jrW" secondAttribute="trailing" priority="750" constant="12" id="Mfy-Kx-Gw9"/>
                             <constraint firstItem="M3p-e1-9D2" firstAttribute="leading" secondItem="BHu-el-yxv" secondAttribute="leadingMargin" constant="16" id="Ny0-uJ-fy9"/>
-                            <constraint firstItem="RT7-C7-eYp" firstAttribute="top" secondItem="iTv-P7-jrW" secondAttribute="bottom" constant="32" id="PfI-oP-GVD"/>
+                            <constraint firstItem="iTv-P7-jrW" firstAttribute="centerX" secondItem="BHu-el-yxv" secondAttribute="centerX" id="VjF-ji-3FT"/>
+                            <constraint firstItem="nyg-jw-103" firstAttribute="top" secondItem="3No-go-GRa" secondAttribute="bottom" constant="12" id="bcg-jN-OvV"/>
                             <constraint firstItem="RT7-C7-eYp" firstAttribute="centerX" secondItem="BHu-el-yxv" secondAttribute="centerX" id="guT-bf-5MK"/>
-                            <constraint firstItem="iTv-P7-jrW" firstAttribute="leading" secondItem="BHu-el-yxv" secondAttribute="leadingMargin" constant="16" id="iui-Kz-aXN"/>
-                            <constraint firstItem="nyg-jw-103" firstAttribute="top" secondItem="3No-go-GRa" secondAttribute="bottom" constant="12" id="k0i-Uq-KPZ"/>
+                            <constraint firstItem="nyg-jw-103" firstAttribute="centerX" secondItem="BHu-el-yxv" secondAttribute="centerX" id="hPJ-bM-DoP"/>
+                            <constraint firstItem="iTv-P7-jrW" firstAttribute="leading" secondItem="BHu-el-yxv" secondAttribute="leadingMargin" priority="750" constant="12" id="iui-Kz-aXN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M3p-e1-9D2" secondAttribute="trailing" constant="16" id="lVY-Cm-Ezd"/>
-                            <constraint firstItem="iTv-P7-jrW" firstAttribute="centerX" secondItem="RT7-C7-eYp" secondAttribute="centerX" id="pF8-DN-wDf"/>
                             <constraint firstItem="nyg-jw-103" firstAttribute="leading" secondItem="BHu-el-yxv" secondAttribute="leadingMargin" id="r4b-f0-2wM"/>
+                            <constraint firstItem="iTv-P7-jrW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nAs-Oa-ccT" secondAttribute="bottom" constant="12" id="xW7-EL-olE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Merck eConnect" id="M4Z-rk-BRY">
@@ -133,7 +134,7 @@
         <!--First View Controller-->
         <scene sceneID="DK0-Nm-aUo">
             <objects>
-                <viewController id="zQd-om-6ml" customClass="FirstViewController" customModule="E_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zQd-om-6ml" customClass="FirstViewController" customModule="eConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L8r-8j-agy"/>
                         <viewControllerLayoutGuide type="bottom" id="upm-hA-LoR"/>
@@ -179,7 +180,7 @@
         <!--Code Reader Controller-->
         <scene sceneID="w2s-IZ-40z">
             <objects>
-                <viewController id="3f3-X9-IyW" customClass="CodeReaderController" customModule="E_Connect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3f3-X9-IyW" customClass="CodeReaderController" customModule="eConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZAR-Dd-bCO"/>
                         <viewControllerLayoutGuide type="bottom" id="1Kz-81-oW5"/>
