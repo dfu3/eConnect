@@ -1,3 +1,6 @@
 [submodule "Alamofire"]
 	path = Alamofire
 	url = https://github.com/Alamofire/Alamofire.git
+[submodule "RSBarcodes_Swift"]
+	path = RSBarcodes_Swift
+	url = git@github.com:yeahdongcn/RSBarcodes_Swift.git
