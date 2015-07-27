@@ -15,8 +15,8 @@ class CodeReaderController: RSCodeReaderViewController {
     var testCrossField: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.focusMarkLayer!.strokeColor = UIColor.redColor().CGColor
-        self.cornersLayer!.strokeColor = UIColor.redColor().CGColor
+        self.focusMarkLayer.strokeColor = UIColor.redColor().CGColor
+        self.cornersLayer.strokeColor = UIColor.redColor().CGColor
         
         let types = NSMutableArray()
         types.addObject(AVMetadataObjectTypeQRCode)

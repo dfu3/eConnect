@@ -76,6 +76,25 @@ class DatabaseInterface{
                 } else {
                     callback(200, true)
                 }
-        }    }
+        }
+    }
+    
+    func getTransactions(userID: Int, callback: (Bool, Array<String>) -> ()){
+        Alamofire.request(.GET, URLString: host_name+"transaction/"+String(userID))
+            .responseJSON { (request,response,data,error) in
+                if(response?.statusCode != 200 || data == nil){
+                    callback(false,[String]())
+                } else {
+                    let format_data = (data as! NSArray) as Array
+                    var nested_array: Array<String> = [String]()
+                    
+                    for item in format_data {
+                        nested_array.append(item as! String)
+                    }
+                    callback(true,nested_array)
+                }
+        }
+    }
+
     
 }
