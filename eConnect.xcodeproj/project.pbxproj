@@ -14,6 +14,8 @@
 		0C8CDDB01B2F469700BA041A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDAE1B2F469700BA041A /* LaunchScreen.xib */; };
 		0C8CDDCA1B30B85300BA041A /* Merck-logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDC91B30B85300BA041A /* Merck-logo.gif */; };
 		0C8CDDCC1B30B85D00BA041A /* merckLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CDDCB1B30B85D00BA041A /* merckLogo.jpg */; };
+		492D75F41B681678006486B6 /* MyConsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492D75F31B681678006486B6 /* MyConsViewController.swift */; };
+		492D75F91B69103B006486B6 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492D75F81B69103B006486B6 /* LocalUser.swift */; };
 		583308501B37D27F00EF325A /* RSBarcodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DD633B1B34845A00AA22A0 /* RSBarcodes.framework */; };
 		583308511B37D27F00EF325A /* RSBarcodes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58DD633B1B34845A00AA22A0 /* RSBarcodes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		583308541B37D28300EF325A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582BBE421B33976F001115CF /* Alamofire.framework */; };
@@ -115,6 +117,8 @@
 		0C8CDDAF1B2F469700BA041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0C8CDDC91B30B85300BA041A /* Merck-logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Merck-logo.gif"; sourceTree = "<group>"; };
 		0C8CDDCB1B30B85D00BA041A /* merckLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = merckLogo.jpg; sourceTree = "<group>"; };
+		492D75F31B681678006486B6 /* MyConsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyConsViewController.swift; sourceTree = "<group>"; };
+		492D75F81B69103B006486B6 /* LocalUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		582BBE3A1B33976F001115CF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		582BBE4E1B3397EE001115CF /* DatabaseInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseInterface.swift; sourceTree = "<group>"; };
 		583C76911B371C1500C1F29F /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -163,10 +167,12 @@
 				582BBE4E1B3397EE001115CF /* DatabaseInterface.swift */,
 				583C76911B371C1500C1F29F /* SecondViewController.swift */,
 				583C76961B3748A700C1F29F /* CodeReaderController.swift */,
+				492D75F31B681678006486B6 /* MyConsViewController.swift */,
 				0C8CDDA91B2F469700BA041A /* Main.storyboard */,
 				0C8CDDAE1B2F469700BA041A /* LaunchScreen.xib */,
 				0C8CDDAC1B2F469700BA041A /* Images.xcassets */,
 				0C8CDDA11B2F469700BA041A /* Supporting Files */,
+				492D75F81B69103B006486B6 /* LocalUser.swift */,
 			);
 			path = E_Connect;
 			sourceTree = "<group>";
@@ -245,7 +251,7 @@
 				TargetAttributes = {
 					0C8CDD9D1B2F469700BA041A = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = R63BQQC8AW;
+						DevelopmentTeam = HT7M2TZQ49;
 					};
 				};
 			};
@@ -337,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				583C76951B373AAD00C1F29F /* DatabaseInterface.swift in Sources */,
+				492D75F41B681678006486B6 /* MyConsViewController.swift in Sources */,
 				583C76921B371C1500C1F29F /* SecondViewController.swift in Sources */,
 				583C76971B3748A700C1F29F /* CodeReaderController.swift in Sources */,
+				492D75F91B69103B006486B6 /* LocalUser.swift in Sources */,
 				0C8CDDA41B2F469700BA041A /* AppDelegate.swift in Sources */,
 				0C8CDDA61B2F469700BA041A /* FirstViewController.swift in Sources */,
 			);

@@ -25,9 +25,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func returnToStepOne(segue: UIStoryboardSegue){
     }
-    struct userInfo {
+    struct userInfo
+    {
         static let username = "username"
         static let ID = "user_id"
+        
     }
     
     //MARK: Actions
@@ -79,16 +81,16 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
             }
         }
     }
+    
     //We have to try and make this method load ASAP to improve UX quality
     override func viewDidLoad(){
         super.viewDidLoad();
         
-        //for testing purposes to clear the defaults
-        //let d = NSUserDefaults.standardUserDefaults()
-        //d.removeObjectForKey(userInfo.username)
-        //d.removeObjectForKey(userInfo.ID)
-        //d.synchronize()
-        //end tesing vars
+        
+        let d = NSUserDefaults.standardUserDefaults()
+        d.removeObjectForKey(userInfo.username)
+        d.removeObjectForKey(userInfo.ID)
+        d.synchronize()
         
         nameTextField.delegate = self
         dispatch_async(dispatch_get_main_queue()){

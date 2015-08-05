@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QAy-89-6Nm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QAy-89-6Nm">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
@@ -111,6 +112,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Merck eConnect" id="M4Z-rk-BRY">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="organize" id="nFQ-5M-C1y">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="1y9-kE-54y" kind="push" id="W0F-H2-gTP"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="52e-jj-b7e">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -130,6 +137,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qch-1H-XzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="419" y="79"/>
+        </scene>
+        <!--My Cons View Controller-->
+        <scene sceneID="Hq7-h6-FyQ">
+            <objects>
+                <viewController id="1y9-kE-54y" customClass="MyConsViewController" customModule="eConnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eZU-J2-QSu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ty9-9L-ucm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A3Q-2Y-O8D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="Connections Made" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59H-cd-dhn">
+                                <rect key="frame" x="32" y="72" width="256" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="k9f-Pt-BKN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.47843137250000001" green="0.57647058819999997" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sAI-jr-6cQ">
+                                <rect key="frame" x="16" y="109" width="288" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1y9-kE-54y" id="GAE-nG-mib"/>
+                                    <outlet property="delegate" destination="1y9-kE-54y" id="0p0-g8-2t8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sAI-jr-6cQ" secondAttribute="bottom" constant="20" symbolic="YES" id="3Tg-k8-qrP"/>
+                            <constraint firstItem="sAI-jr-6cQ" firstAttribute="trailing" secondItem="A3Q-2Y-O8D" secondAttribute="trailingMargin" id="IU0-K6-dFC"/>
+                            <constraint firstItem="59H-cd-dhn" firstAttribute="leading" secondItem="A3Q-2Y-O8D" secondAttribute="leadingMargin" constant="16" id="NzG-jC-NDe"/>
+                            <constraint firstItem="sAI-jr-6cQ" firstAttribute="centerX" secondItem="59H-cd-dhn" secondAttribute="centerX" id="b7R-H6-gTR"/>
+                            <constraint firstItem="59H-cd-dhn" firstAttribute="top" secondItem="eZU-J2-QSu" secondAttribute="bottom" constant="8" symbolic="YES" id="hoK-F9-xuz"/>
+                            <constraint firstItem="sAI-jr-6cQ" firstAttribute="top" secondItem="59H-cd-dhn" secondAttribute="bottom" constant="16" id="m5D-zv-AAj"/>
+                            <constraint firstItem="sAI-jr-6cQ" firstAttribute="leading" secondItem="A3Q-2Y-O8D" secondAttribute="leadingMargin" id="wJC-K1-TZc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zaa-81-I1p"/>
+                    <connections>
+                        <outlet property="tableView" destination="sAI-jr-6cQ" id="7nK-Q8-y36"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6F-Rz-HBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="442"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="DK0-Nm-aUo">
@@ -175,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ryl-x5-9kb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="79"/>
+            <point key="canvasLocation" x="905" y="-253"/>
         </scene>
         <!--Code Reader Controller-->
         <scene sceneID="w2s-IZ-40z">
