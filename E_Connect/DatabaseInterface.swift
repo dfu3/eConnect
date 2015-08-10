@@ -16,7 +16,7 @@ class DatabaseInterface
     
     func registerNewUser(name: String, callback: (Int,Bool) -> ()){
         //replace spaces wiht +
-        Alamofire.request(.POST, host_name+"users/", parameters: ["username":name])
+        Alamofire.request(.POST, URLString: host_name+"users/", parameters: ["username":name])
             .responseString(){ (request, response, data, error) in
                 if(response?.statusCode != 200 || data == nil){
                     callback(-1, false)
@@ -27,7 +27,7 @@ class DatabaseInterface
     }
     
     func getUserCount(userID: Int, callback: (Int) -> ()){
-        Alamofire.request(.GET, host_name+"users/"+String(userID))
+        Alamofire.request(.GET, URLString: host_name+"users/"+String(userID))
             .responseString(){ (request, response, data, error) in
                 if(response?.statusCode != 200 || data == nil){
                     callback(-1)
@@ -48,7 +48,7 @@ class DatabaseInterface
     }
     
     func getLeaderBoard(callback: (Bool, Array<(Int, String, Int)>) -> ()){
-        Alamofire.request(.GET, host_name+"users/")
+        Alamofire.request(.GET, URLString: host_name+"users/")
             .responseJSON { (request,response,data,error) in
                 if(response?.statusCode != 200 || data == nil){
                     callback(false,[(Int, String,Int)]())
@@ -66,7 +66,7 @@ class DatabaseInterface
     }
     
     func newTransaction(self_id: Int, other_id: Int, callback: (Int, Bool) -> ()){
-        Alamofire.request(.POST, host_name+"transaction/", parameters: ["user_id_1": self_id,"user_id_2":other_id])
+        Alamofire.request(.POST, URLString: host_name+"transaction/", parameters: ["user_id_1": self_id,"user_id_2":other_id])
             .responseString(){ (request, response, data, error) in
                 if(response?.statusCode != 200 || data == nil || data != "Transaction Successful"){
                     if response == nil {
@@ -81,7 +81,7 @@ class DatabaseInterface
     }
     
     func getTransactions(userID: Int, callback: (Bool, Array<String>) -> ()){
-        Alamofire.request(.GET, host_name+"transaction/"+String(userID))
+        Alamofire.request(.GET, URLString: host_name+"transaction/"+String(userID))
             .responseJSON { (request,response,data,error) in
                 if(response?.statusCode != 200 || data == nil){
                     callback(false,[String]())

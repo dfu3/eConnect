@@ -251,7 +251,7 @@
 				TargetAttributes = {
 					0C8CDD9D1B2F469700BA041A = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = HT7M2TZQ49;
+						DevelopmentTeam = R63BQQC8AW;
 					};
 				};
 			};
@@ -490,6 +490,7 @@
 				INFOPLIST_FILE = E_Connect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.merck.eConnect;
 				PRODUCT_NAME = eConnect;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -507,6 +508,7 @@
 				INFOPLIST_FILE = E_Connect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.merck.eConnect;
 				PRODUCT_NAME = eConnect;
 				PROVISIONING_PROFILE = "";
 			};
