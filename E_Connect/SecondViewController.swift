@@ -34,17 +34,26 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     
     //MARK: Actions
     //This action should verify that the entered name is correct, display a dialouge to promt a confirmation of the name, and then edit the label to show the user's name and hide the text field and button.
-    @IBAction func enterButtonAction(sender: UIButton) {
+    @IBAction func enterButtonAction(sender: UIButton)
+    {
+        if(nameTextField.text!.characters.count < 1)
+        {
+            showErrorMessage("Name cannot be emtpy")
+            return
+        }
+        
         nameTextField.resignFirstResponder()
         let allowedChars: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
         var badChar = false;
-        for letter in nameTextField.text!.characters{
+        for letter in nameTextField.text!.characters
+        {
             if ( allowedChars.rangeOfString(String(letter)) == nil ){
                 badChar = true;
                 break;
             }
         }
-        if(badChar){
+        if(badChar)
+        {
             showErrorMessage("Your name can only contain alphebetical charecters")
             return
         }
@@ -66,7 +75,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
+    
         userName = nameTextField.text
+        
     }
     
     override func viewDidAppear(animated: Bool) {

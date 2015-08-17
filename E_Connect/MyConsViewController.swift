@@ -22,14 +22,6 @@ class MyConsViewController: UIViewController, UITableViewDataSource
     override func viewDidAppear(animated: Bool)
     {
         buildData();
-//        
-//        for (var i = 0; i < tempArr.count; i++)
-//        {
-//            if(i % 2 == 0)
-//            {
-//                loadArr.append(tempArr[i]);
-//            }
-//        }
         
     }
     
@@ -41,7 +33,7 @@ class MyConsViewController: UIViewController, UITableViewDataSource
         
         //print(self.tempArr);
 
-        tempArr = Array(Set(tempArr));
+        //tempArr = Array(Set(tempArr));
         
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"cell");
         cell.textLabel?.text = self.tempArr[indexPath.row];
@@ -83,6 +75,8 @@ class MyConsViewController: UIViewController, UITableViewDataSource
             userID = i;
         }
         
+        print(userID);
+        
         let networkLoadingAlert = UIAlertController(title: "Loading...\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.Alert);
         
         let callback =
@@ -90,7 +84,7 @@ class MyConsViewController: UIViewController, UITableViewDataSource
             (success: Bool, myArr: Array<String>) -> () in networkLoadingAlert.dismissViewControllerAnimated(false, completion: nil);
             
             print("start callback");
-            
+            print(myArr);
             
             if(myArr != self.tempArr)
             {
@@ -123,7 +117,7 @@ class MyConsViewController: UIViewController, UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         
-        tempArr = Array(Set(tempArr));
+        //tempArr = Array(Set(tempArr));
         return self.tempArr.count;
         
     }
