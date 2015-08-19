@@ -15,38 +15,27 @@ class MyConsViewController: UIViewController, UITableViewDataSource
     let databaseInterface = DatabaseInterface();
     var refreshControl:UIRefreshControl!;
     
-    var tempArr = [String]();
-    var loadArr = [String]();
+    var data: [String] = ["Loading ..."]
     
     
     override func viewDidAppear(animated: Bool)
     {
         buildData();
-//        
-//        for (var i = 0; i < tempArr.count; i++)
-//        {
-//            if(i % 2 == 0)
-//            {
-//                loadArr.append(tempArr[i]);
-//            }
-//        }
-        
     }
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         
-        print("in table View");
-        
-        //print(self.tempArr);
-
-        tempArr = Array(Set(tempArr));
-        
-        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"cell");
-        cell.textLabel?.text = self.tempArr[indexPath.row];
+        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier: nil);
+        cell.textLabel?.text = data[indexPath.row];
         
         return cell;
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return data.count
+        
     }
 
     override func viewDidLoad()
@@ -58,13 +47,9 @@ class MyConsViewController: UIViewController, UITableViewDataSource
         self.refreshControl = UIRefreshControl();
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh");
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged);
-        self.tableView.addSubview(refreshControl);
-        
-        //print("in viewdidload");
-        
-        
-        // Do any additional setup after loading the view.
+        self.tableView.addSubview(refreshControl)
     }
+    
     
     func refresh(sender:AnyObject)
     {
@@ -83,33 +68,33 @@ class MyConsViewController: UIViewController, UITableViewDataSource
             userID = i;
         }
         
-        let networkLoadingAlert = UIAlertController(title: "Loading...\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.Alert);
-        
         let callback =
         {
-            (success: Bool, myArr: Array<String>) -> () in networkLoadingAlert.dismissViewControllerAnimated(false, completion: nil);
-            
-            print("start callback");
-            
-            
-            if(myArr != self.tempArr)
-            {
-                for element in myArr
-                {
-                    //print(element);
-                    self.tempArr.append(element);
+            (success: Bool, myArr: Array<String>) -> () in
+            dispatch_async(dispatch_get_main_queue()){
+                self.data = [String]()
+                if success {
+                    for name in myArr{
+                        var str: String = name
+                        if str.characters.count > 26{
+                            let someIndex=advance(str.startIndex, 26)
+                            str = str.substringToIndex(someIndex)
+                            str = str + "..."
+                        }
+                        self.data.append(str)
+                    }
+                } else {
+                    let str = "Network Error"
+                    self.data.append(str)
                 }
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
-        }
         
-        self.tableView.reloadData();
-        self.refreshControl.endRefreshing();
-        
-        self.presentViewController(networkLoadingAlert, animated: false, completion: nil)
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0))
-        {
-                self.databaseInterface.getTransactions(userID, callback: callback);
+            self.tableView.reloadData();
+            self.refreshControl.endRefreshing();
         }
+        databaseInterface.getTransactions(userID, callback: callback)
 
     }
 
@@ -120,13 +105,7 @@ class MyConsViewController: UIViewController, UITableViewDataSource
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        
-        tempArr = Array(Set(tempArr));
-        return self.tempArr.count;
-        
-    }
+    
 
     /*
     // MARK: - Navigation
