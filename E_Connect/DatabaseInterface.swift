@@ -11,17 +11,18 @@ import Alamofire
 
 class DatabaseInterface
 {
-    let host_name = "http://econnect-backend.herokuapp.com/"
-    //let host_name = "http://127.0.0.1:5000/"
+    //let host_name = "http://econnect-backend.herokuapp.com/"
+    let host_name = "http://127.0.0.1:5000/"
     
-    func registerNewUser(name: String, callback: (Int,Bool) -> ()){
-        //replace spaces wiht +
+    func registerNewUser(name: String, callback: (Int,Bool,Int) -> ()){
         Alamofire.request(.POST, URLString: host_name+"users/", parameters: ["username":name])
             .responseString(){ (request, response, data, error) in
-                if(response?.statusCode != 200 || data == nil){
-                    callback(-1, false)
+                if (response!.statusCode == 503){
+                    callback(-1,false, 503)
+                } else if(response?.statusCode != 200 || data == nil){
+                    callback(-1, false,500)
                 } else {
-                    callback(Int(data!)!,true)
+                    callback(Int(data!)!,true,200)
                 }
         }
     }

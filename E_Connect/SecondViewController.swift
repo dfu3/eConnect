@@ -132,21 +132,23 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     }
     func registerUserWithServer(){
         let networkLoadingAlert = UIAlertController(title: "Loading...\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        let callback = {(returnedID: Int, success: Bool) -> () in
-            networkLoadingAlert.dismissViewControllerAnimated(false, completion: nil)
-            if success{
-                self.setSavedUsernameAndID(self.userName!, id: returnedID)
-            } else {
-                self.showErrorMessage("There was a network or server error. Please check your network status and try again")
-            }
+        let callback = {(returnedID: Int, success: Bool, statusCode: Int) -> () in
+            networkLoadingAlert.dismissViewControllerAnimated(false, completion: {
+                print(String(statusCode))
+                if success{
+                    self.setSavedUsernameAndID(self.userName!, id: returnedID)
+                } else if statusCode == 503{
+                    self.showMessage("Hold Up!", message:"The event has ended, thanks for playing!")
+                }else{
+                    self.showErrorMessage("There was a network or server error. Please check your network status and try again")
+                }
+            })
+            
         }
         dispatch_async(dispatch_get_main_queue()) {
             self.presentViewController(networkLoadingAlert, animated: false, completion: nil)
             self.databaseInterface.registerNewUser(self.userName!, callback: callback)
         }
-        
-        
-        
     }
     
     func showErrorMessage(message: String){
@@ -207,6 +209,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
                 self.updateCount()
             } else if statuscode == 406{
                 self.showMessage("Hold Up!", message:"You've already met this person.")
+            } else if statuscode == 503 {
+                self.showMessage("Hold Up!", message:"The event has ended, thanks for playing!")
             } else {
                 self.showErrorMessage("There was a network or server error. Please check your network status and try again")
             }
